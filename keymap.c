@@ -39,14 +39,20 @@ enum layers {
 #define ALT_O RALT_T(KC_O)
 #define CMD_E LCMD_T(KC_E)
 #define CMD_I LCMD_T(KC_I)
+#define SFT_F LSFT_T(KC_F)
+#define SFT_J RSFT_T(KC_J)
+#define CNTRL_D LCTL_T(KC_D)
+#define CNTRL_K RCTL_T(KC_K)
+
+
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     [_QWERTY] = LAYOUT(
-      KC_TAB,    KC_Q,   ALT_W,  CMD_E,   KC_R,   KC_T,                                         KC_Y,    KC_U,    CMD_I,    ALT_O,    KC_P,    KC_BSPC,
-      CTL_ESC,   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                                         KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, CTL_QUOT,
+      KC_TAB,    KC_Q,   ALT_W,  CMD_E,  KC_R,    KC_T,                                         KC_Y,    KC_U,    CMD_I,    ALT_O,    KC_P,    KC_BSPC,
+      CTL_ESC,   KC_A,   KC_S,   CNTRL_D,   SFT_F,   KC_G,                                         KC_H,    SFT_J,   CNTRL_K,    KC_L,    KC_SCLN, CTL_QUOT,
       KC_LSFT,   KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   _______,   ADJ, ADJ, _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MT_RSFT_ENT,
               _______, _______, LOWER, SPC_NUM, LCMD_RIGHT, RCMD_LEFT, SPC_NUM, MO(_RAISE),  _______, _______
     ),
@@ -54,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     [_LOWER] = LAYOUT(
-      _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE,                                     _______, KC_PGDN, KC_PGUP, KC_INSERT, KC_PSCR, KC_PIPE,
+      _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE,                                     _______, KC_PGDN, KC_PGUP, KC_INSERT, KC_PSCR, KC_DEL,
       _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,                                      KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,  KC_SLSH, KC_PIPE,
       _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, _______, RESET, _______, _______, _______, KC_END,  KC_HOME, _______,  _______, _______,
                                  _______, _______, _______, _______, _______,  _______,  _______, _______, _______, _______
@@ -75,24 +81,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD,_______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
-// /*
-//  * Layer template
-//  *
-//  * ,-------------------------------------------.                              ,-------------------------------------------.
-//  * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
-//  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-//  * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
-//  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-//  * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
-//  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-//  *                        |      |      |      |      |      |  |      |      |      |      |      |
-//  *                        |      |      |      |      |      |  |      |      |      |      |      |
-//  *                        `----------------------------------'  `----------------------------------'
-//  */
+
+
      [_karjalasta] = LAYOUT(
        _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                                   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,
        _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, _______,
-       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5, _______, _______, _______, _______, KC_F6,   KC_F7,   KC_F8,   KC_DOT,  KC_F10, _______,
+       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5, _______, _______, _______, _______, KC_F6,   KC_F7,   KC_F8,   KC_DOT,  KC_SLSH, _______,
                                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
      ),
 };
