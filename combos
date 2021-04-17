@@ -1,0 +1,14 @@
+left:
+tab ER
+esc DF
+caps CV
+#shift on home row 
+#control on home row
+
+right:
+backspace UI
+delete UO
+pipe JK
+backslash JL
+quote HK
+enter M,
